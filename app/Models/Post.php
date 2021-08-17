@@ -12,4 +12,16 @@ class Post extends Model
     public static $rules = array(
         'text' => 'required'
     );
+
+    Public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+   
 }
