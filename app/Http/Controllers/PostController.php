@@ -20,6 +20,12 @@ class PostController extends Controller
       return response()->json([
         'data' => $item
       ], 201);
+
+      $post = new Post;
+        $post->text = $request->text;
+        $post->user_id = $request->user_id;
+
+        $post->save();
     }
     public function show(Post $post)
     {
