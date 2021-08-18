@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Models\Post;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -23,11 +21,6 @@ class CommentController extends Controller
     return response()->json([
       'data' => $item
     ], 201);
-    $comment = new Comment;
-        $comment->comment = $request->comment;
-        $comment->posts_id = $request->posts_id;
-        $comment->user_id = $request->user_id;
-        $comment->save();
   }
 
   public function show(Comment $comment)
